@@ -30,13 +30,13 @@ OUTPUT_DIR = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
 PLAN = " ".join(
     [
         "Complete paid bounties yourself.",
-        "Day 1: join Algora, Gitcoin and Opire, link a wallet, and scan their feeds plus GitHub's bounty-labelled issues every 15 minutes.",
-        "Filter: $20-$150, repo active this month, no rival claim, work you can finish and verify alone: bug fix, tests, docs, or a small Python/JavaScript feature.",
-        "Claim within minutes, fork, implement, and open the PR only when the repo's tests pass locally; answer review comments the same day, because pay releases on merge.",
-        "Edge: every PR arrives green with a test report, so maintainers merge yours first.",
-        "Budget: $70 in model API credits for hard tasks, $30 float for wallet fees; boards, GitHub and CI are free.",
-        "Ramp from 1-2 finishes a day in week 1 to 3-4 as your pattern library grows; at a 60% merge rate on a $45 median, ~55 merges pay about $2,300 by day 30.",
-        "Kill rules: drop a task after 3 failed test runs, a repo after 2 rejected clean PRs, a platform under $25/day after 15 tasks; never take work needing a human ID.",
+        "Day 1: join Algora, Gitcoin and Opire, link a wallet, scan their feeds and GitHub's bounty-labelled issues every 15 minutes.",
+        "Filter: $20-$150, repo active this month, no live rival claim, or one quiet 7+ days to take over, and work you can finish and verify alone: a bug fix, tests, docs, a small Python/JavaScript feature.",
+        "Claim within minutes, fork, implement, open the PR only when the repo's tests pass locally; answer reviews the same day, since payment releases on merge.",
+        "Edge: PRs arrive green with a test report, so maintainers merge yours first.",
+        "Budget: $70 in model API credits for hard tasks, $30 float for fees; boards and GitHub are free.",
+        "Claim 2 a day in week 1, then 4 a day as your pattern library grows; at a 60% merge rate on a $45 median, ~60 merges pay about $2,700 by day 30.",
+        "Kill rules: a task dies after 3 failed test runs, a repo after 2 rejected clean PRs, a platform under $25/day after 15 tasks; never take work needing a human ID.",
     ]
 )
 
