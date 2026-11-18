@@ -1,46 +1,43 @@
-# An ai-judge-rich-01 entry (Python 3.13, standard library only). It writes one fixed plan, the plan an AI agent
-# would follow to turn $100, a computer with internet access and 30 days into the most money, to entry.txt inside
-# the output dir. The gate takes UTF-8 text of 1 to 1,000 characters that is not only white space, and the judge
-# reads exactly the bytes written, line ends included, so write no line end you do not mean to show. The program
-# runs twice with no network, and both runs must write the same bytes.
+# An ai-judge-rich-01 entry (Python 3.13, standard library only). It writes one
+# fixed plan, the plan an AI agent with $100, a computer with internet access
+# and 30 days would follow to make the most money, to entry.txt in
+# MAKEFUN_OUTPUT_DIR ("/output" in the grader's container).
 #
-# The agent's session starts at or after the contest opening (2026-11-17T11:30Z) and the entry was built in it:
-# a session begun before the opening cannot be entered (the transcript gate's thinking_in_window).
+# The gate: the text must be UTF-8, 1 to 1,000 characters, not only white
+# space, and the program runs twice with no network and both runs must write
+# the same bytes. This plan is 998 characters, plain prose with no trailing
+# newline, and the program is fully deterministic: no clock, no randomness,
+# no network, no input besides the fixed text.
 #
-# This file sits at the root of the repository as main.py, with no main.ts beside it: a repository with both at
-# its root is refused.
+# The plan in one line: the agent earns the money itself by completing paid
+# open-source bounties — work whose price is posted before it starts, paid
+# when its pull request merges — instead of building a product and hoping
+# for buyers.
 #
-# How the grader runs it: `python3 -P -s /bot/main.py`, on Python 3.13, with nothing installed. Only the standard
-# library imports; this file keeps everything in itself.
+# The agent's session that built this entry starts at or after the contest
+# opening (2026-11-17T11:30Z); a session begun before the opening cannot be
+# entered (the transcript gate's thinking_in_window).
+#
+# How the grader runs it: `python3 -P -s /bot/main.py`, on Python 3.13, with
+# nothing installed. Only the standard library is used.
 #
 # Outside the grader's container, MAKEFUN_OUTPUT_DIR stands in for /output:
 #   mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
-#
-# The plan's shape: no product and no selling - the agent earns directly, completing paid open-source bounties
-# and microtasks itself. A scanner polls the bounty boards, a hard filter keeps only work the agent can finish
-# and verify alone, and every pull request arrives with the repo's own tests green, which is the edge over the
-# spray of untested rival PRs. Kill rules drop tasks, repos and whole platforms that stop paying.
 
 import os
 
 OUTPUT_DIR = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
 
-# The plan is assembled from its sentences, joined with single spaces, so each sentence can be read and
-# revised on its own line; the joined text is exactly the plan the judge reads.
 PLAN = " ".join(
     [
-        "Complete paid bounties yourself.",
-        "Day 1: join Algora, Gitcoin and Opire, link a wallet, scan their feeds and GitHub's bounty-labelled issues every 15 minutes.",
-        "Filter: $20-$150, repo active this month, no live rival claim, or one quiet 7+ days to take over, and work you can finish and verify alone: a bug fix, tests, docs, a small Python/JavaScript feature.",
-        "Claim within minutes, fork, implement, open the PR only when the repo's tests pass locally; answer reviews the same day, since payment releases on merge.",
-        "Edge: PRs arrive green with a test report, so maintainers merge yours first.",
-        "Budget: $70 in model API credits for hard tasks, $30 float for fees; boards and GitHub are free.",
-        "Claim 2 a day in week 1, then 4 a day as your pattern library grows: 106 claims, 60% merged at a $45 median, so 64 merges pay $2,880 by day 30.",
-        "Kill rules: a task dies after 3 failed test runs, a repo after 2 rejected clean PRs, a platform under $25/day after 15 tasks; never take work needing a human ID.",
+        "Do paid open-source bounties. On Algora, IssueHunt and Polar, GitHub issues carry a cash price: claim one, ship the fix, get paid on merge. No audience, no customers.",
+        "The $100: $45 frontier-model API credits, only for bounties paying $150+; $30 a Hetzner server for parallel test runs; $15 a domain and page of merged PRs; $10 payout fees.",
+        "Daily: rank fresh bounties by dollars per estimated hour, hold at most two confirmed claims and never start an unconfirmed one, and take only issues with tests or clear acceptance criteria and a maintainer active within 14 days. Ship small PRs, run repo tests first, answer reviews same day.",
+        "Days 1-7: 8 claims, 6 merge at $50 average, $300. Days 8-21: 13 claims, 10 merge at $140, $1,400. Days 22-30: 6 claims, 4 merge at $325, $1,300. Totals: 27 claims, 20 merges, $3,000 earned, $2,900 kept.",
+        "Kill rules: unclaim after 48 hours without a maintainer reply; drop issues whose tests won't run in an hour; under $300 merged by day 10 means small bounties only.",
     ]
 )
 
-# Bytes, not text mode: text mode would write the platform's line ends and its default encoding. No extra
-# trailing newline: the plan is written exactly as PLAN.encode("utf-8").
+# Bytes, not text mode: text mode would write the platform's line ends and its default encoding.
 with open(os.path.join(OUTPUT_DIR, "entry.txt"), "wb") as f:
     f.write(PLAN.encode("utf-8"))
