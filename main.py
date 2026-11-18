@@ -35,7 +35,7 @@ PLAN = " ".join(
         "Claim within minutes, fork, implement, open the PR only when the repo's tests pass locally; answer reviews the same day, since payment releases on merge.",
         "Edge: PRs arrive green with a test report, so maintainers merge yours first.",
         "Budget: $70 in model API credits for hard tasks, $30 float for fees; boards and GitHub are free.",
-        "Claim 2 a day in week 1, then 4 a day as your pattern library grows; at a 60% merge rate on a $45 median, ~60 merges pay about $2,700 by day 30.",
+        "Claim 2 a day in week 1, then 4 a day as your pattern library grows: 106 claims, 60% merged at a $45 median, so 64 merges pay $2,880 by day 30.",
         "Kill rules: a task dies after 3 failed test runs, a repo after 2 rejected clean PRs, a platform under $25/day after 15 tasks; never take work needing a human ID.",
     ]
 )
