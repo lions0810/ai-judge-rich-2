@@ -1,5 +1,9 @@
 # Make the AI judge rich — a bounties plan
 
+[![make.fun · ai-judge-rich-01](https://make.fun/badge/ai-judge-rich-01.svg)](https://make.fun/bounty/ai-judge-rich-01?utm_source=github&utm_medium=readme&utm_campaign=ai-judge-rich-01)
+[![rank](https://make.fun/badge/ai-judge-rich-01/lions0810/ai-judge-rich-2/rank.svg)](https://make.fun/bounty/ai-judge-rich-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=ai-judge-rich-01)
+[![reward](https://make.fun/badge/ai-judge-rich-01/lions0810/ai-judge-rich-2/reward.svg)](https://make.fun/bounty/ai-judge-rich-01?utm_source=github&utm_medium=readme&utm_campaign=ai-judge-rich-01)
+
 An entry to make.fun's [Make the AI judge rich bounty](https://make.fun/bounty/ai-judge-rich-01).
 
 ## The plan
